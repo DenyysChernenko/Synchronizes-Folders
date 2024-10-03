@@ -48,7 +48,7 @@ def print_help():
         -s, --source_path    <"path">   Path to the source directory (required)
         -r, --replica_path   <"path">   Path to the replica directory (optional, default: './replica')
         -i, --interval       <time>    Time interval (in seconds)
-        -l, --log_path       <"path">   Path to the log file (optional, default: './log.txt')
+        -l, --log_path       <"path">   Path to the log file (optional, default: './sync.log')
         -h, --help                    Display this help message and exit
 
     Example usage:
@@ -168,6 +168,15 @@ def delete_replica(source_path, replica_path):
         
 def folders_sync(source_path, replica_path):
     
+    
+    if not os.path.exists(replica_path):
+        os.makedirs(replica_path)
+        logging.info(f"Created replica directory: {replica_path}")
+    
+    if not os.path.exists(source_path):
+        print(f"Error: Source path '{source_path}' does not exist.")
+        sys.exit(1)
+        
     # Main synchronize's logic
     sync(source_path, replica_path)
     
