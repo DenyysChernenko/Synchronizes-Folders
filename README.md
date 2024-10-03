@@ -11,21 +11,26 @@ This is a Python-based folder synchronization program that ensures the **replica
 
 ### Arguments
 
-  Options:
-        ```-s, --source_path    <"path">   ``` 
-        Path to the source directory (required)
-        ``` -r, --replica_path   <"path">   ```   
-        Path to the replica directory (optional, default: './replica')
-        ``` -i, --interval      <time> ```   
-        Time interval (in seconds)
-        ``` -l, --log_path       <"path"> ```  
-        Path to the log file (optional, default: './sync.log')
-        ``` -h, --help    ```                
-        Display this help message and exit
+ Options:
+
+    -s, --source_path <"path">
+    Path to the source directory (required)
+
+    -r, --replica_path <"path">
+    Path to the replica directory (optional, default: './replica')
+
+    -i, --interval <time>
+    Time interval (in seconds) between sync cycles (optional, default: 10 seconds)
+
+    -l, --log_path <"path">
+    Path to the log file (optional, default: './sync.log')
+
+    -h, --help
+    Display this help message and exit
 
 
 ### Usage
-```
+
     Example usage:
         python main.py [OPTIONS]
         python main.py -s /path/to/source
@@ -33,4 +38,3 @@ This is a Python-based folder synchronization program that ensures the **replica
         
     Note: Ensure that the source path exists before running the program.
           Provide path to folder in quotes ('path'|"path")
-```
